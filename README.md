@@ -9,10 +9,10 @@ To train BPDP using the feature vectors created by MPPN:
 
 The folder "Evaluation" contains all evaluation results displayed in the paper. 
 
-# Precision, Recall, and F1-Score for a Single Classifier for all Deviations (BPDP_SC,CIBE) and for Multiple Classifier without Undersampling and Weighted Loss (BPDP_MC,No Imbalance)
-As mentioned in Sections IV-C and VII respectively, the following table illustrates that BPDP_SC,CIBE and BPDP_MC,No Imbalance perform worse than the proposed approaches BPDP_CIBE and BPDP_MPPN.
+# Precision, Recall, and F1-Score for a Single Classifier for all Deviations (BPDP<sub>SC,CIBE</sub>) and for Multiple Classifier without Undersampling and Weighted Loss (BPDP<sub>MC,No Imbalance</sub>)
+As mentioned in Sections IV-C and VII respectively, the following table illustrates that BPDP<sub>SC,CIBE</sub> and BPDP<sub>MC,No Imbalance</sub> perform worse than the proposed approaches BPDP<sub>CIBE</sub> and BPDP<sub>MPPN</sub>.
 
-|      CIBE Single Classifier    || CIBE Multiple No Imbalance |        | CIBE Multiple Classifier |        | MPPN Multiple Classifier |        |
+|      BPDP<sub>SC,CIBE</sub>    || BPDP<sub>MC,No Imbalance</sub> |        | BPDP<sub>CIBE</sub> |        | BPDP<sub>MPPN</sub> |        |
 |:----------------------:|:------:|:--------------------------:|:------:|:------------------------:|:------:|:------------------------:|:------:|
 |           Dev          | No Dev |             Dev            | No Dev |            Dev           | No Dev |            Dev           | No Dev |
 |         0.0877         | 0.9410 |           0.4495           | 0.9262 |          0.1620          | 0.9669 |          0.1405          | 0.9480 |
