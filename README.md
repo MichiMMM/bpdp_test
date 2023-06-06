@@ -9,6 +9,9 @@ To train BPDP using the feature vectors created by MPPN:
 
 The folder "Evaluation" contains all evaluation results displayed in the paper. 
 
+# Precision, Recall, and F1-Score for a Single Classifier for all Deviations (BPDP_SC,CIBE) and for Multiple Classifier without Undersampling and Weighted Loss (BPDP_MC,No Imbalance)
+As mentioned in Sections IV-C and VII respectively, the following table illustrates that BPDP_SC,CIBE and BPDP_MC,No Imbalance perform worse than the proposed approaches BPDP_CIBE and BPDP_MPPN.
+
 # Further Shapley value plots
 The following graphs show Shapley value plots for all deviations of the BPIC 12A event log. 
 
