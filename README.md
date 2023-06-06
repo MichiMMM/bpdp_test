@@ -12,7 +12,7 @@ The folder "Evaluation" contains all evaluation results displayed in the paper.
 # Precision, Recall, and F1-Score for a Single Classifier for all Deviations (BPDP_SC,CIBE) and for Multiple Classifier without Undersampling and Weighted Loss (BPDP_MC,No Imbalance)
 As mentioned in Sections IV-C and VII respectively, the following table illustrates that BPDP_SC,CIBE and BPDP_MC,No Imbalance perform worse than the proposed approaches BPDP_CIBE and BPDP_MPPN.
 
-|      CIBE Single Classifier     | CIBE Multiple No Imbalance |        | CIBE Multiple Classifier |        | MPPN Multiple Classifier |        |
+|      CIBE Single Classifier    || CIBE Multiple No Imbalance |        | CIBE Multiple Classifier |        | MPPN Multiple Classifier |        |
 |:----------------------:|:------:|:--------------------------:|:------:|:------------------------:|:------:|:------------------------:|:------:|
 |           Dev          | No Dev |             Dev            | No Dev |            Dev           | No Dev |            Dev           | No Dev |
 |         0.0877         | 0.9410 |           0.4495           | 0.9262 |          0.1620          | 0.9669 |          0.1405          | 0.9480 |
