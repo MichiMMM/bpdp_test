@@ -36,6 +36,20 @@ As mentioned in Sections IV-C and VII respectively, the following table illustra
 |   MobIS   | Precision |         0.0612         | 0.9615 |           0.2109           | 0.9592 |          0.0993          | 0.9748 |          0.0956          | 0.9971 |
 |           | Recall    |         0.0035         | 0.9982 |           0.1067           | 0.9610 |          0.7162          | 0.5906 |          0.5644          | 0.7391 |
 |           | AUC<sub>ROC</sub>   |         0.5007         |        |           0.5338           |        |          0.6534          |        |          0.6518          |        |
+
+
+# Hyperparameteroptimization
+We performed a HPO for the following discrete values for hyperparameters of BPDP (**boldness** indicates the best performing value):
+
+WCEL weighted loss: [4, 8, **16**, 24, 32]
+
+Dropout: [0.0, **0.1**, 0.2]
+
+Network Size: [32x32, 64x64, **256x256**, 512x256x256]
+
+For more information, we refer to the Excel file "HyperParameterOptimization.xlsx" in the folder "evaluation", which portrays the performance of the different changed hyperparameters in comparison to the proposed BPDP approach for the CIBE encoding.
+
+
 # Further Shapley value plots
 The following graphs show Shapley value plots for all deviations of the BPIC 12A event log. 
 
