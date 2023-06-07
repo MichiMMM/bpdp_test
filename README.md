@@ -47,7 +47,7 @@ Dropout: [0.0, **0.1**, 0.2]
 
 Network Size: [32x32, 64x64, **256x256**, 512x256x256]
 
-For more information, we refer to the Excel file "HyperParameterOptimization.xlsx" in the folder "evaluation", which portrays the performance of the different changed hyperparameters in comparison to the proposed BPDP approach for the CIBE encoding.
+For more information, we refer to the Excel file "HyperParameterOptimization.xlsx" in the folder "Evaluation", which portrays the performance of the different changed hyperparameters in comparison to the proposed BPDP approach for the CIBE encoding.
 
 
 # Further Shapley value plots
