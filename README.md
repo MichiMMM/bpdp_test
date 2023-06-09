@@ -11,31 +11,7 @@ The folder "Evaluation" contains all evaluation results displayed in the paper.
 
 # Precision, Recall, and F1-Score for a Single Classifier for all Deviations (BPDP<sub>SC,CIBE</sub>) and for Multiple Classifier without Undersampling and Weighted Loss (BPDP<sub>MC,No Imbalance</sub>)
 As mentioned in Sections IV-C and VII respectively, the following table illustrates that BPDP<sub>SC,CIBE</sub> and BPDP<sub>MC,No Imbalance</sub> perform worse than the proposed approaches BPDP<sub>CIBE</sub> and BPDP<sub>MPPN</sub>.
-
-| Data      |           | BPDP<sub>SC,CIBE</sub> |        | PDP<sub>MC,No Imbalance</sub> |        | BPDP<sub>CIBE</sub> |        | BPDP<sub>MPPN</sub> |        |
-|-----------|-----------|:----------------------:|:------:|:--------------------------:|:------:|:------------------------:|:------:|:------------------------:|:------:|
-|           |           |           Dev          | No Dev |             Dev            | No Dev |            Dev           | No Dev |            Dev           | No Dev |
-| BPI   12A | Precision |         0.0877         | 0.9410 |           0.4495           | 0.9262 |          0.1620          | 0.9669 |          0.1405          | 0.9480 |
-|           | Recall    |         0.9251         | 0.1186 |           0.1074           | 0.9927 |          0.8084          | 0.6563 |          0.6636          | 0.5733 |
-|           | AUC<sub>ROC</sub>   |         0.5218         |        |           0.5500           |        |          0.7324          |        |          0.6185          |        |
-|  BPI 12O  | Precision |         0.7619         | 0.8830 |           0.7619           | 0.8830 |          0.2019          | 0.9625 |          0.1798          | 0.9652 |
-|           | Recall    |         0.1706         | 0.9959 |           0.1706           | 0.9959 |          0.7981          | 0.5348 |          0.8089          | 0.4588 |
-|           | AUC<sub>ROC</sub>   |         0.5832         |        |           0.5832           |        |          0.6665          |        |          0.6339          |        |
-| Dom. Dec. | Precision |         0.7258         | 0.9934 |           0.6387           | 0.9959 |          0.1401          | 0.9982 |          0.0314          | 0.9980 |
-|           | Recall    |         0.1575         | 0.9995 |           0.4349           | 0.9985 |          0.7619          | 0.8897 |          0.6459          | 0.7876 |
-|           | AUC<sub>ROC</sub>   |         0.5784         |        |           0.7167           |        |          0.8258          |        |          0.7168          |        |
-| Int. Dec. | Precision |         0.3911         | 0.9849 |           0.2968           | 0.9882 |          0.0720          | 0.9938 |          0.0741          | 0.9973 |
-|           | Recall    |         0.0005         | 1.0000 |           0.2409           | 0.9933 |          0.6333          | 0.8223 |          0.6239          | 0.8456 |
-|           | AUC<sub>ROC</sub>   |         0.5002         |        |           0.6171           |        |          0.7270          |        |          0.7348          |        |
-|    RfP    | Precision |         0.2973         | 0.9952 |           0.3746           | 0.9953 |          0.0402          | 0.9979 |          0.0291          | 0.9985 |
-|           | Recall    |         0.1083         | 0.9993 |           0.3202           | 0.9977 |          0.6888          | 0.8353 |          0.6486          | 0.8180 |
-|           | AUC<sub>ROC</sub>   |         0.5537         |        |           0.6590           |        |          0.7620          |        |          0.7333          |        |
-|   Prep.   | Precision |         0.0294         | 0.9896 |           0.3144           | 0.9931 |          0.0457          | 0.9969 |          0.0270          | 0.9971 |
-|           | Recall    |         0.0012         | 0.9996 |           0.3005           | 0.9939 |          0.5566          | 0.8514 |          0.5511          | 0.7664 |
-|           | AUC<sub>ROC</sub>   |         0.5004         |        |           0.6472           |        |          0.7040          |        |          0.6587          |        |
-|   MobIS   | Precision |         0.0612         | 0.9615 |           0.2109           | 0.9592 |          0.0993          | 0.9748 |          0.0956          | 0.9971 |
-|           | Recall    |         0.0035         | 0.9982 |           0.1067           | 0.9610 |          0.7162          | 0.5906 |          0.5644          | 0.7391 |
-|           | AUC<sub>ROC</sub>   |         0.5007         |        |           0.5338           |        |          0.6534          |        |          0.6518          |        |
+![plot](./Evaluation/figures/sc_noimb_bpdp)
 
 
 # Hyperparameteroptimization
