@@ -11,7 +11,7 @@ The folder "Evaluation" contains all evaluation results displayed in the paper.
 
 # Precision, Recall, and F1-Score for a Single Classifier for all Deviations (BPDP<sub>SC,CIBE</sub>) and for Multiple Classifier without Undersampling and Weighted Loss (BPDP<sub>MC,No Imbalance</sub>)
 As mentioned in Sections IV-C and VII respectively, the following table illustrates that BPDP<sub>SC,CIBE</sub> and BPDP<sub>MC,No Imbalance</sub> perform worse than the proposed approaches BPDP<sub>CIBE</sub> and BPDP<sub>MPPN</sub>.
-![plot](./Evaluation/figures/sc_noimb_bpdp)
+![plot](./Evaluation/figures/sc_noimb_bpdp.png)
 
 
 # Hyperparameteroptimization
