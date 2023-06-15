@@ -1,13 +1,18 @@
 # Usage of this repository
 This repository is supposed to help to reproduce the work proposed in the paper "Business Process Deviation Prediction: Predicting Non-Conforming Process Behavior"
 
-The file "BPDP_Code.ipynb" contains all code used to implement and evaluate the proposed approach. The function "BPDP_classification_CIBE" executes the approach using the complex index-based encoding while the function "BPDP_classification_MPPN" uses the pre-trained feature vectors from MPPN. This folder contains all event logs, to-be models, and frozen alignments. Please load the respective data from the folder "Datasets" before. 
+The file "BPDP_Code.ipynb" contains all code used to implement and evaluate the proposed approach. The function "BPDP_classification_CIBE" executes the approach using the complex index-based encoding (BPDP<sub>CIBE</sub>) while the function "BPDP_classification_MPPN" uses the pre-trained feature vectors from MPPN (BPDP<sub>MPPN</sub>). 
 
 To train BPDP using the feature vectors created by MPPN:
 - Train the MPPN using the code from https://github.com/joLahann/mppn
 - Store the feature vectors per prefix in a pandas dataframe. Each row represents one prefix where "idx" is the unique id of the prefix and "FV" the learned feature vector of it
 
-The folder "Evaluation" contains all evaluation results displayed in the paper. 
+To execute the classification using the Genga et. al. approach (Genga et. al. [9]), use the function "genga_benchmark". For the CatBoost classification (CatBoost), execute "classify_cat" and to use suffix prediction (Suffix Prediction) for deviation prediction (Suffix Prediction), execute "suffix_prediction_deviations".
+
+To execute BPDP using a single classifier (BPDP<sub>SC,CIBE</sub>), execute "BPDP_single_classifier". For BPDP without undersampling and weighted loss, use "BPDP_no_imbalance".
+
+The folder "Evaluation" contains all evaluation results displayed in the paper. This folder contains all event logs, to-be models, and frozen alignments. Please load the respective data from the folder "Datasets" before. 
+
 
 # Precision, Recall, and F1-Score for a Single Classifier for all Deviations (BPDP<sub>SC,CIBE</sub>) and for Multiple Classifier without Undersampling and Weighted Loss (BPDP<sub>MC,No Imbalance</sub>)
 As mentioned in Sections IV-C and VII respectively, the following table illustrates that BPDP<sub>SC,CIBE</sub> and BPDP<sub>MC,No Imbalance</sub> perform worse than the proposed approaches BPDP<sub>CIBE</sub> and BPDP<sub>MPPN</sub>.
