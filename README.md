@@ -9,7 +9,7 @@ To train BPDP using the feature vectors created by MPPN:
 
 To execute the classification using the Genga et. al. approach (Genga et. al. [9]), use the function "genga_benchmark". For the CatBoost classification (CatBoost), execute "classify_cat" and to use suffix prediction (Suffix Prediction) for deviation prediction (Suffix Prediction), execute "suffix_prediction_deviations".
 
-To execute BPDP using a single classifier (BPDP<sub>SC,CIBE</sub>), execute "BPDP_single_classifier". For BPDP without undersampling and weighted loss, use "BPDP_no_imbalance".
+To execute BPDP using a single classifier (BPDP<sub>SC,CIBE</sub>), execute "BPDP_single_classifier". For BPDP without undersampling and weighted loss (BPDP<sub>MC,No Imbalance</sub>), use "BPDP_no_imbalance".
 
 The folder "Evaluation" contains all evaluation results displayed in the paper. This folder contains all event logs, to-be models, and frozen alignments. Please load the respective data from the folder "Datasets" before. 
 
