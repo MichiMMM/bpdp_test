@@ -11,32 +11,53 @@ The folder "Evaluation" contains all evaluation results displayed in the paper. 
 
 # Hyperparameter of different design choices
 In the paper, different design choices for BPDP are discussed. Here, we document the corresponding hyperparameter for each design. 
+
+
 **BPDP<sub>CIBE</sub>:**
+
 Network Size: Encoded Vectore Size CIBE x 256 x 256 x 2
+
 Learning Rate: 0.0001
+
 WCEL weighted loss: 16
+
 Dropout: 0.1
+
 Undersampling: One-sided selection
 
 **BPDP<sub>MPPN</sub>:**
+
 Network Size: 128 x 256 x 256 x 2
 Learning Rate: 0.0001
+
 WCEL weighted loss: 16
+
 Dropout: 0.1
+
 Undersampling: One-sided selection
 
 **BPDP<sub>SC,CIBE</sub>:**
+
 Network Size: Encoded Vectore Size CIBE x 2048 x 1024 x Number of deviations
+
 Learning Rate: 0.0001
+
 WCEL weighted loss: based on label imbalance (less imbalanced deviation types receive lower weight)
+
 Dropout: 0.1
+
 Undersampling: One-sided selection
 
 **BPDP<sub>MC, No Imbalance</sub>:**
+
 Network Size: Encoded Vectore Size CIBE x 256 x 256 x 2
+
 Learning Rate: 0.0001
+
 WCEL weighted loss: None
+
 Dropout: 0.1
+
 Undersampling: None
 
 
