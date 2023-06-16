@@ -1,11 +1,7 @@
 # Usage of this repository
 This repository is supposed to help to reproduce the work proposed in the paper "Business Process Deviation Prediction: Predicting Non-Conforming Process Behavior"
 
-The file "BPDP_Code.ipynb" contains all code used to implement and evaluate the proposed approach. The function "BPDP_classification_CIBE" executes the approach using the complex index-based encoding (BPDP<sub>CIBE</sub>) while the function "BPDP_classification_MPPN" uses the pre-trained feature vectors from MPPN (BPDP<sub>MPPN</sub>). 
-
-To train BPDP using the feature vectors created by MPPN:
-- Train the MPPN using the code from https://github.com/joLahann/mppn
-- Store the feature vectors per prefix in a pandas dataframe. Each row represents one prefix where "idx" is the unique id of the prefix and "FV" the learned feature vector of it
+The file "BPDP_Code.ipynb" contains all code used to implement and evaluate the proposed approach. The function "BPDP_classification_CIBE" executes the approach using the complex index-based encoding (BPDP<sub>CIBE</sub>) while the function "BPDP_classification_MPPN" uses the pre-trained feature vectors from MPPN (BPDP<sub>MPPN</sub>).
 
 To execute the classification using the Genga et. al. approach (Genga et. al. [9]), use the function "genga_benchmark". For the CatBoost classification (CatBoost), execute "classify_cat" and to use suffix prediction (Suffix Prediction) for deviation prediction (Suffix Prediction), execute "suffix_prediction_deviations".
 
@@ -13,9 +9,39 @@ To execute BPDP using a single classifier (BPDP<sub>SC,CIBE</sub>), execute "BPD
 
 The folder "Evaluation" contains all evaluation results displayed in the paper. This folder contains all event logs, to-be models, and frozen alignments. Please load the respective data from the folder "Datasets" before. 
 
+# Hyperparameter of different design choices
+In the paper, different design choices for BPDP are discussed. Here, we document the corresponding hyperparameter for each design. 
+**BPDP<sub>CIBE</sub>:**
+Network Size: Encoded Vectore Size CIBE x 256 x 256 x 2
+Learning Rate: 0.0001
+WCEL weighted loss: 16
+Dropout: 0.1
+Undersampling: One-sided selection
+
+**BPDP<sub>MPPN</sub>:**
+Network Size: 128 x 256 x 256 x 2
+Learning Rate: 0.0001
+WCEL weighted loss: 16
+Dropout: 0.1
+Undersampling: One-sided selection
+
+**BPDP<sub>SC,CIBE</sub>:**
+Network Size: Encoded Vectore Size CIBE x 2048 x 1024 x Number of deviations
+Learning Rate: 0.0001
+WCEL weighted loss: based on label imbalance (less imbalanced deviation types receive lower weight)
+Dropout: 0.1
+Undersampling: One-sided selection
+
+**BPDP<sub>MC, No Imbalance</sub>:**
+Network Size: Encoded Vectore Size CIBE x 256 x 256 x 2
+Learning Rate: 0.0001
+WCEL weighted loss: None
+Dropout: 0.1
+Undersampling: None
+
 
 # Precision, Recall, and F1-Score for a Single Classifier for all Deviations (BPDP<sub>SC,CIBE</sub>) and for Multiple Classifier without Undersampling and Weighted Loss (BPDP<sub>MC,No Imbalance</sub>)
-As mentioned in the dicsussion section, the following table illustrates that BPDP<sub>SC,CIBE</sub> and BPDP<sub>MC,No Imbalance</sub> perform worse than the proposed approaches BPDP<sub>CIBE</sub> and BPDP<sub>MPPN</sub>.
+As mentioned in the approach section, the following table illustrates that BPDP<sub>SC,CIBE</sub> and BPDP<sub>MC,No Imbalance</sub> perform worse than the proposed approaches BPDP<sub>CIBE</sub> and BPDP<sub>MPPN</sub>.
 ![plot](./Evaluation/figures/sc_noimb_bpdp.png)
 
 
@@ -29,6 +55,23 @@ Dropout: [0.0, **0.1**, 0.2]
 Network Size: [32x32, 64x64, **256x256**, 512x256x256]
 
 For more information, we refer to the Excel file "HyperParameterOptimization.xlsx" in the folder "Evaluation", which portrays the performance of the different changed hyperparameters in comparison to the proposed BPDP approach for the CIBE encoding.
+
+# MPPN
+
+To train BPDP using the feature vectors created by MPPN:
+- Train the MPPN using the code from https://github.com/joLahann/mppn
+- Store the feature vectors per prefix in a pandas dataframe. Each row represents one prefix where "idx" is the unique id of the prefix and "FV" the learned feature vector of it
+
+We used the following attributes per event log as input for MPPN when training to create the FV as well as for suffix prediction (input and next event prediction):
+
+| Log             | Categorical                                             | Numerical            | Temporal       |
+|-----------------|---------------------------------------------------------|----------------------|----------------|
+| BPIC 12         | concept:name, org:resource                              | case:AMOUNT_REQ      | time:timestamp |
+| BPIC 20 dom     | concept:name, org:resource, org:role, case:BudgetNumber | case:Amount          | time:timestamp |
+| BPIC 20 int     | concept:name, org:resource, org:role, case:BudgetNumber | case:RequestedAmount | time:timestamp |
+| BPIC 20 request | concept:name, org:resource, org:role, case:Project      | case:RequestedAmount | time:timestamp |
+| BPIC 20 prepaid | concept:name, org:resource, org:role, case:Task         | case:RequestedAmount | time:timestamp |
+| MobIS           | concept:name, org:resource, type                        | cost                 | time:timestamp |
 
 
 # Further Shapley value plots
