@@ -54,7 +54,7 @@ Dropout: 0.1
 Undersampling: None
 
 
-# Precision, Recall, and F1-Score for a Single Classifier for all Deviations (BPDP<sub>SC,CIBE</sub>) and for Multiple Classifier without Undersampling and Weighted Loss (BPDP<sub>MC,No Imbalance</sub>)
+# Precision, Recall, and F1-Score for Prediction using XGBoost (XGBoost), a Single Classifier for all Deviations (BPDP<sub>SC,CIBE</sub>), and for Multiple Classifier without Undersampling and Weighted Loss (BPDP<sub>MC,No Imbalance</sub>)
 As mentioned in the approach section, the following table illustrates that BPDP<sub>SC,CIBE</sub> and BPDP<sub>MC,No Imbalance</sub> perform worse than the proposed approaches BPDP<sub>CIBE</sub> and BPDP<sub>MPPN</sub>.
 ![plot](./Evaluation/figures/sc_noimb_bpdp.png)
 
