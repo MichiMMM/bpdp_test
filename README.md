@@ -23,7 +23,7 @@ Dropout: 0.1
 
 Undersampling: One-sided selection
 
-**BPDP<sub>MPPN</sub (Described approach from the paper using MPPN-Encoding)>:**
+**BPDP<sub>MPPN</sub> (Described approach from the paper using MPPN-Encoding):**
 
 Learning Rate: 0.0001
 
