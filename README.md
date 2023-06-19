@@ -28,6 +28,7 @@ Undersampling: One-sided selection
 **BPDP<sub>MPPN</sub>:**
 
 Network Size: 128 x 256 x 256 x 2
+
 Learning Rate: 0.0001
 
 WCEL weighted loss: 16
