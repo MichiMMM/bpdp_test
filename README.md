@@ -3,7 +3,7 @@ This repository is supposed to help to reproduce the work proposed in the paper 
 
 The file "BPDP_Code.ipynb" contains all code used to implement and evaluate the proposed approach. The function "BPDP_classification_CIBE" executes the approach using the complex index-based encoding (BPDP<sub>CIBE</sub>) while the function "BPDP_classification_MPPN" uses the pre-trained feature vectors from MPPN (BPDP<sub>MPPN</sub>).
 
-To execute the classification using the Genga et. al. approach (Genga et. al. [9]), use the function "genga_benchmark". For the CatBoost classification (CatBoost), execute "classify_cat" and to use suffix prediction (Suffix Prediction) for deviation prediction (Suffix Prediction), execute "suffix_prediction_deviations".
+To execute the classification using the Genga et. al. approach (Genga et. al. [9]), use the function "genga_benchmark". For the CatBoost classification (CatBoost) or XGBoost (XGBoost), execute "classify_cat" or "classify_xgb" correspondingly and to use suffix prediction for deviation prediction (Suffix Prediction), execute "suffix_prediction_deviations".
 
 To execute BPDP using a single classifier (BPDP<sub>SC,CIBE</sub>), execute "BPDP_single_classifier". For BPDP without undersampling and weighted loss (BPDP<sub>MC,No Imbalance</sub>), use "BPDP_no_imbalance".
 
@@ -13,9 +13,7 @@ The folder "Evaluation" contains all evaluation results displayed in the paper. 
 In the paper, different design choices for BPDP are discussed. Here, we document the corresponding hyperparameter for each design. 
 
 
-**BPDP<sub>CIBE</sub>:**
-
-Network Size: Encoded Vectore Size CIBE x 256 x 256 x 2
+**BPDP<sub>CIBE</sub> (Described approach from the paper using CIBE-Encoding):**
 
 Learning Rate: 0.0001
 
@@ -25,9 +23,7 @@ Dropout: 0.1
 
 Undersampling: One-sided selection
 
-**BPDP<sub>MPPN</sub>:**
-
-Network Size: 128 x 256 x 256 x 2
+**BPDP<sub>MPPN</sub (Described approach from the paper using MPPN-Encoding)>:**
 
 Learning Rate: 0.0001
 
@@ -37,9 +33,7 @@ Dropout: 0.1
 
 Undersampling: One-sided selection
 
-**BPDP<sub>SC,CIBE</sub>:**
-
-Network Size: Encoded Vectore Size CIBE x 2048 x 1024 x Number of deviations
+**BPDP<sub>SC,CIBE</sub> (Predictions using only a single classifier that simultaneously predicts all deviation types):**
 
 Learning Rate: 0.0001
 
@@ -49,9 +43,7 @@ Dropout: 0.1
 
 Undersampling: One-sided selection
 
-**BPDP<sub>MC, No Imbalance</sub>:**
-
-Network Size: Encoded Vectore Size CIBE x 256 x 256 x 2
+**BPDP<sub>MC, No Imbalance</sub> (Predictions using the same architetcure as BPDP<sub>CIBE</sub> except no undersampling and weighted loss is applied):**
 
 Learning Rate: 0.0001
 
