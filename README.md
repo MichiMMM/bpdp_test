@@ -111,16 +111,16 @@ To illustrate the varying performance over deviations, we show the evaluation me
 | Recall    | 0.7770           | 0.7557           | 0.8926           | 0.8084  | 0.5503           | 0.6143           | 0.8043           | 0.6563  |
 | ROC_AUC   | 0.6637           | 0.6850           | 0.8485           | 0.7324  | 0.6637           | 0.6850           | 0.8485           | 0.7324  |
 
- # Time for prediction for Genga, CatBoost, and BPDP (in seconds)
+ # Time for prediction for Genga, CatBoost, Suffic Prediction, and BPDP (in seconds)
 
 To illustrate the time needed for prediction by each individual approach, we show the average time per event log below. The classification has been performed with a Apple M1 Pro chip and 16 GB RAM. Differences can be partly attributed to early stopping, size of event logs, and number of attributes. We see that all approaches do not require a prediction time that would make hinder practical usage.
 
-| Data      | Genga | CatBoost | BPDP   |
-|-----------|-------|----------|--------|
-| BPIC 12A  | 11.72 | 62.58    | 143.35 |
-| BPIC 12O  | 5.77  | 27.43    | 71.74  |
-| Dom. Dec. | 12.08 | 49.51    | 103.79 |
-| Int. Dec. | 16.32 | 302.87   | 179.15 |
-| RfP       | 7.61  | 131.90   | 62.10  |
-| Prep.     | 3.55  | 38.53    | 89.41  |
-| MobIS     | 10.77 | 416.24   | 235.35 |
+| Data      | Genga | CatBoost | Suffix  | BPDP   |
+|-----------|-------|----------|---------|--------|
+| BPIC 12A  | 11.72 | 62.58    | 368.36  | 143.35 |
+| BPIC 12O  | 5.77  | 27.43    | 192.90  | 71.74  |
+| Dom. Dec. | 12.08 | 49.51    | 345.12  | 103.79 |
+| Int. Dec. | 16.32 | 302.87   | 1550.48 | 179.15 |
+| RfP       | 7.61  | 131.90   | 252.97  | 62.10  |
+| Prep.     | 3.55  | 38.53    | 298.52  | 89.41  |
+| MobIS     | 10.77 | 416.24   | 1513.62 | 235.35 |
