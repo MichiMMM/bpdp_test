@@ -1,9 +1,9 @@
 # Usage of this repository
-This repository is supposed to help to reproduce the work proposed in the paper "Business Process Deviation Prediction: Predicting Non-Conforming Process Behavior"
+This repository is supposed to help to reproduce the work in the paper "Business Process Deviation Prediction: Predicting Non-Conforming Process Behavior". The corresponding approach BPDP was originally proposed in [1] and is currently under review for an extension.
 
-The file "BPDP_Code.ipynb" contains all code used to implement and evaluate the proposed approach. The function "BPDP_classification_CIBE" executes the approach using the complex index-based encoding (BPDP<sub>CIBE</sub>) while the function "BPDP_classification_MPPN" uses the pre-trained feature vectors from MPPN (BPDP<sub>MPPN</sub>).
+The file "BPDP_Code.ipynb" contains all code used to implement and evaluate the proposed approach. The function "BPDP_classification_CIBE" executes the approach using the complex index-based encoding (BPDP<sub>CIBE</sub>) while the function "BPDP_classification_MPPN" uses the pre-trained feature vectors from MPPN (BPDP<sub>MPPN</sub>) as used in [1].
 
-To execute the classification using the Genga et. al. approach (Genga et. al. [9]), use the function "genga_benchmark". For the CatBoost classification (CatBoost) or XGBoost (XGBoost), execute "classify_cat" or "classify_xgb" correspondingly and to use suffix prediction for deviation prediction (Suffix Prediction), execute "suffix_prediction_deviations".
+To execute the classification using the Genga et. al. approach [2], use the function "genga_benchmark". For the CatBoost classification (CatBoost) or XGBoost (XGBoost), execute "classify_cat" or "classify_xgb" correspondingly and to use suffix prediction for deviation prediction (Suffix Prediction), execute "suffix_prediction_deviations".
 
 To execute BPDP using a single classifier (BPDP<sub>SC,CIBE</sub>), execute "BPDP_single_classifier". For BPDP without undersampling and weighted loss (BPDP<sub>MC,No Imbalance</sub>), use "BPDP_no_imbalance".
 
@@ -23,7 +23,7 @@ Dropout: 0.1
 
 Undersampling: One-sided selection
 
-**BPDP<sub>MPPN</sub> (Described approach from the paper using MPPN-Encoding):**
+**BPDP<sub>MPPN</sub> (Described approach applied only in [1] using MPPN-Encoding):**
 
 Learning Rate: 0.0001
 
@@ -70,7 +70,7 @@ Network Size: [32x32, 64x64, **256x256**, 512x256x256]
 
 For more information, we refer to the Excel file "HyperParameterOptimization.xlsx" in the folder "Evaluation", which portrays the performance of the different changed hyperparameters in comparison to the proposed BPDP approach for the CIBE encoding.
 
-# MPPN
+# MPPN-Encoding for BPDP as used in [1]
 
 To train BPDP using the feature vectors created by MPPN:
 - Train the MPPN using the code from https://github.com/joLahann/mppn
@@ -87,6 +87,7 @@ We used the following attributes per event log as input for MPPN when training t
 | BPIC 20 prepaid | concept:name, org:resource, org:role, case:Task         | case:RequestedAmount | time:timestamp |
 | MobIS           | concept:name, org:resource, type                        | cost                 | time:timestamp |
 
+Note that this encoding is only applied in the original version of the paper [1].
 
 # Further Shapley value plots
 The following graphs show Shapley value plots for all deviations of the BPIC 12A event log. 
@@ -115,12 +116,19 @@ To illustrate the varying performance over deviations, we show the evaluation me
 
 To illustrate the time needed for prediction by each individual approach, we show the average time per event log below. The classification has been performed with a Apple M1 Pro chip and 16 GB RAM. Differences can be partly attributed to early stopping, size of event logs, and number of attributes. We see that all approaches do not require a prediction time that would make hinder practical usage.
 
-| Data      | Genga | CatBoost | Suffix  | BPDP   |
-|-----------|-------|----------|---------|--------|
-| BPIC 12A  | 11.72 | 62.58    | 368.36  | 143.35 |
-| BPIC 12O  | 5.77  | 27.43    | 192.90  | 71.74  |
-| Dom. Dec. | 12.08 | 49.51    | 345.12  | 103.79 |
-| Int. Dec. | 16.32 | 302.87   | 1550.48 | 179.15 |
-| RfP       | 7.61  | 131.90   | 252.97  | 62.10  |
-| Prep.     | 3.55  | 38.53    | 298.52  | 89.41  |
-| MobIS     | 10.77 | 416.24   | 1513.62 | 235.35 |
+
+| Data	    | Genga	| CatBoost  | Suffix	 | BPDP-FFN | BPDP-LSTM |
+|-----------|-------|-----------|------------|----------|-----------|
+| 12A	    | 11.72 | 62.58 	| 368.36	 | 143.35	| 4217.21   |
+| 12O   	| 5.77	| 27.43	    | 192.90	 | 71.74	| 5252.02   |
+| Dom.      | 12.08	| 49.51	    | 345.12	 | 103.79	| 3655.15   |
+| Int.      | 16.32	| 302.87	| 1550.48	 | 179.15	| 4449.83   |
+| RfP   	| 7.61	| 131.90	| 252.97	 | 62.10	| 961.94    |
+| Prep.	    | 3.55	| 38.53	    | 298.52	 | 89.41	| 1269.47   |
+| MobIS	    | 10.77	| 416.24	| 1513.62	 | 235.35	| 3871.84   |
+
+
+# References
+[1] Grohs, Michael, Peter Pfeiffer, and Jana-Rebecca Rehse. "Business Process Deviation Prediction: Predicting Non-Conforming Process Behavior." 2023 5th International Conference on Process Mining (ICPM). IEEE, 2023.
+
+[2] Genga, Laura, et al. "Predicting critical behaviors in business process executions: when evidence counts." Business Process Management Forum: BPM Forum 2019, Vienna, Austria, September 1–6, 2019, Proceedings 17. Springer International Publishing, 2019.
