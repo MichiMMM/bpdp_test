@@ -1,11 +1,11 @@
 # Usage of this repository
 This repository is supposed to help to reproduce the work in the paper "Business Process Deviation Prediction: Predicting Non-Conforming Process Behavior". The corresponding approach BPDP was originally proposed in [1] and is currently under review for an extension.
 
-The file "BPDP_Code.ipynb" contains all code used to implement and evaluate the proposed approach. The function "BPDP_classification_CIBE" executes the approach using the complex index-based encoding (BPDP<sub>CIBE</sub>) while the function "BPDP_classification_MPPN" uses the pre-trained feature vectors from MPPN (BPDP<sub>MPPN</sub>) as used in [1].
+The file "BPDP_Code_IS.ipynb" contains all code used to implement and evaluate the proposed approach. The function "IDP_separate_CIBE" executes the Individual Deviation Predictor (IDP) using the complex index-based encoding (IDP-separate) while the function "BPDP_cIDP_separate_MPPNlassification_MPPN" utilizes the pre-trained feature vectors from MPPN (BPDP<sub>MPPN</sub>) as used in [1]. Function "IDP_separate_DPP_CIBE" also includes the Deviation Pattern Predictor (DPP). 
+The other evaluated versions of IDP can be executed with "IDP_separate_LSTM_CIBE" (IDP-separate as LSTM-version), "IDP_collective_CIBE" (IDP-collective), and "IDP_no_imbalance" (without undersampling and weighted loss).
+To execute IDP and return a level of confidence, use "IDP_separate_CIBE_confidence".
 
-To execute the classification using the Genga et. al. approach [2], use the function "genga_benchmark". For the CatBoost classification (CatBoost) or XGBoost (XGBoost), execute "classify_cat" or "classify_xgb" correspondingly and to use suffix prediction for deviation prediction (Suffix Prediction), execute "suffix_prediction_deviations".
-
-To execute BPDP using a single classifier (BPDP<sub>SC,CIBE</sub>), execute "BPDP_single_classifier". For BPDP without undersampling and weighted loss (BPDP<sub>MC,No Imbalance</sub>), use "BPDP_no_imbalance".
+To execute the classification using the Genga et. al. approach [2], use the function "genga_benchmark". For the CatBoost classification (CatBoost) or XGBoost (XGBoost), execute "catboost_patterns" or "classify_xgb" correspondingly and to use suffix prediction for deviation prediction (Suffix Prediction), execute "suffix_prediction_patterns".
 
 The folder "Evaluation" contains all evaluation results displayed in the paper. This folder contains all event logs, to-be models, and frozen alignments. Please load the respective data from the folder "Datasets" before. 
 
@@ -13,7 +13,7 @@ The folder "Evaluation" contains all evaluation results displayed in the paper. 
 In the paper, different design choices for BPDP are discussed. Here, we document the corresponding hyperparameter for each design. 
 
 
-**BPDP<sub>CIBE</sub> (Described approach from the paper using CIBE-Encoding):**
+**IDP-separate-CIBE (Described approach from the paper using CIBE-Encoding):**
 
 Learning Rate: 0.0001
 
@@ -23,7 +23,7 @@ Dropout: 0.1
 
 Undersampling: One-sided selection
 
-**BPDP<sub>MPPN</sub> (Described approach applied only in [1] using MPPN-Encoding):**
+**IDP-separate-MPPN (Described approach applied only in [1] using MPPN-Encoding):**
 
 Learning Rate: 0.0001
 
@@ -33,7 +33,7 @@ Dropout: 0.1
 
 Undersampling: One-sided selection
 
-**BPDP<sub>SC,CIBE</sub> (Predictions using only a single classifier that simultaneously predicts all deviation types):**
+**IDP-collective-CIBE (Predictions using only a single classifier that simultaneously predicts all deviation types):**
 
 Learning Rate: 0.0001
 
@@ -43,7 +43,7 @@ Dropout: 0.1
 
 Undersampling: One-sided selection
 
-**BPDP<sub>MC, No Imbalance</sub> (Predictions using the same architetcure as BPDP<sub>CIBE</sub> except no undersampling and weighted loss is applied):**
+**IDP-separate-no imbalance (Predictions using the same architetcure as IDP-separate-CIBE except no undersampling and weighted loss is applied):**
 
 Learning Rate: 0.0001
 
@@ -52,11 +52,6 @@ WCEL weighted loss: None
 Dropout: 0.1
 
 Undersampling: None
-
-
-# Precision, Recall, and F1-Score for Prediction using XGBoost (XGBoost), a Single Classifier for all Deviations (BPDP<sub>SC,CIBE</sub>), and for Multiple Classifier without Undersampling and Weighted Loss (BPDP<sub>MC,No Imbalance</sub>)
-As mentioned in the approach section, the following table illustrates that XGBoost, BPDP<sub>SC,CIBE</sub>, and BPDP<sub>MC,No Imbalance</sub> perform worse than the proposed approaches BPDP<sub>CIBE</sub> and BPDP<sub>MPPN</sub>.
-![plot](./Evaluation/figures/sc_noimb_bpdp.png)
 
 
 # Hyperparameteroptimization
