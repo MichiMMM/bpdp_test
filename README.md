@@ -127,3 +127,20 @@ To illustrate the time needed for prediction by each individual approach, we sho
 [1] Grohs, Michael, Peter Pfeiffer, and Jana-Rebecca Rehse. "Business Process Deviation Prediction: Predicting Non-Conforming Process Behavior." 2023 5th International Conference on Process Mining (ICPM). IEEE, 2023.
 
 [2] Genga, Laura, et al. "Predicting critical behaviors in business process executions: when evidence counts." Business Process Management Forum: BPM Forum 2019, Vienna, Austria, September 1–6, 2019, Proceedings 17. Springer International Publishing, 2019.
+
+# Python Packages
+python version:	3.9
+	
+|package|	version|
+|math|	1.2.1|
+|statistics|	1.0.3.5|
+|pm4py|	2.7.0|
+|sklearn|	0.3.6|
+|numpy|	1.23.3|
+|pandas|	1.5.3|
+|pickle|	0.7.5|
+|torch|	2.1.2|
+|imblearn|	0.0|
+|tqdm|	4.64.1|
+|xboost|	1.7.3|
+|catboost|	1.2|
