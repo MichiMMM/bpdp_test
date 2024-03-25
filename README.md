@@ -131,8 +131,9 @@ To illustrate the time needed for prediction by each individual approach, we sho
 # Python Packages
 python version:	3.9
 	
-|package|	version|
-|math|	1.2.1|
+|package |	version|
+|--------|---------|
+|math    |	1.2.1  |
 |statistics|	1.0.3.5|
 |pm4py|	2.7.0|
 |sklearn|	0.3.6|
