@@ -3,7 +3,7 @@ This repository is supposed to help to reproduce the work in the paper "Business
 
 The file "BPDP_Code_IS.ipynb" contains all code used to implement and evaluate the proposed approach. The function "IDP_separate_CIBE" executes the Individual Deviation Predictor (IDP) using the complex index-based encoding (IDP-separate) while the function "BPDP_IDP_separate_MPPN" utilizes the pre-trained feature vectors from MPPN (BPDP<sub>MPPN</sub>) as used in [1]. Function "IDP_separate_DPP_CIBE" also includes the Deviation Pattern Predictor (DPP). 
 The other evaluated versions of IDP can be executed with "IDP_separate_LSTM_CIBE" (IDP-separate as LSTM-version), "IDP_collective_CIBE" (IDP-collective), and "IDP_no_imbalance" (without undersampling and weighted loss).
-To execute IDP and return a level of confidence, use "IDP_separate_CIBE_confidence". The function "get_metrics_IDP_MPPN" returns the results for IDP-MPPN based on the confusion matrices of this design found in the "Datasets" folder.
+To execute IDP and return a level of confidence, use "IDP_separate_CIBE_confidence". The function "get_metrics_IDP_MPPN" returns the results for IDP-MPPN based on the confusion matrices of this design found in the "Evaluation" folder.
 
 To execute the classification using the Genga et. al. approach [2], use the function "genga_benchmark". For the CatBoost classification (CatBoost) or XGBoost (XGBoost), execute "catboost_patterns" or "classify_xgb" correspondingly and to use suffix prediction for deviation prediction (Suffix Prediction), execute "suffix_prediction_patterns".
 
