@@ -1,5 +1,5 @@
 # Usage of this repository
-This repository is supposed to help to reproduce the work in the paper "Business Process Deviation Prediction: Predicting Non-Conforming Process Behavior". The corresponding approach BPDP was originally proposed in [1] and is currently under review for an extension.
+This repository is supposed to help to reproduce the work in the paper "Proactive Conformance Checking: An Approach for Predicting Deviations in Business Processes". The corresponding approach BPDP was originally proposed in [1] and is currently under review for an extension.
 
 The file "BPDP_Code_IS.ipynb" contains all code used to implement and evaluate the proposed approach. The function "IDP_separate_CIBE" executes the Individual Deviation Predictor (IDP) using the complex index-based encoding (IDP-separate) while the function "BPDP_IDP_separate_MPPN" utilizes the pre-trained feature vectors from MPPN (BPDP<sub>MPPN</sub>) as used in [1]. Function "IDP_separate_DPP_CIBE" also includes the Deviation Pattern Predictor (DPP). 
 The other evaluated versions of IDP can be executed with "IDP_separate_LSTM_CIBE" (IDP-separate as LSTM-version), "IDP_collective_CIBE" (IDP-collective), and "IDP_no_imbalance" (without undersampling and weighted loss).
